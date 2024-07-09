@@ -13,11 +13,11 @@ pipeline {
     environment {
         SNAP_REPO = 'vproflie-snapshot'
         NEXUS_USER = 'admin'
-        NEXUS_PASS = 'VicK#@344'
+        NEXUS_PASS = 'admin'
         RELEASE_REPO = 'vprofile-release'
         CENTRAL_REPO = 'vprofile-maven-central'
-        NEXUSIP = '192.168.1.35'
-        NEXUS_URL = '192.168.1.35:8081'
+        NEXUSIP = '192.168.1.14'
+        NEXUS_URL = '192.168.1.14:8081'
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'vprofile-maven-group'
     }
@@ -25,7 +25,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git url: 'git@github.com:vanthiyadhevan/vprofile-project.git', branch: 'ci-jenkins', credentialsId: 'vanthiyadhevan'
+                git url: 'https://github.com/Boopathy02/vprofile-project.git', branch: 'cicd-jenkins'
             }
         }
         stage('Build') {
