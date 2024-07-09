@@ -51,7 +51,7 @@ pipeline {
         }
         stage('Upload Artifact To Nexus') {
             steps {
-                    withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: '${NEXUS_USER}', passwordVariable: '${NEXUS_PASS}')]) {
+                    withCredentials([usernamePassword(credentialsId: 'nexus3', usernameVariable: '${NEXUS_USER}', passwordVariable: '${NEXUS_PASS}')]) {
                             nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
@@ -59,7 +59,7 @@ pipeline {
                             groupId: 'Prod',
                             version: "${env.BUILD_ID}",
                             repository: "${RELEASE_REPO}",
-                            credentialsId: 'nexus',
+                            credentialsId: 'nexus3',
                             artifacts: [
                                 [artifactId: 'vproapp',
                                 classifier: '',
