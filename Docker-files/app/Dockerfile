@@ -1,4 +1,4 @@
-FROM tomcat:8-jre11
+FROM tomcat:9-jre11
 LABEL "Project"="Vprofile"
 LABEL "Author"="Imran"
 
